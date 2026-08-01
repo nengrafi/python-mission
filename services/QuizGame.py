@@ -16,6 +16,7 @@ class QuizGame:
 3. 퀴즈 목록
 4. 점수 확인
 5. 종료
+6. 퀴즈 삭제
 ==================================================================
 """
         print(menu)
@@ -86,4 +87,13 @@ class QuizGame:
             self.data["max_score"] = total_score
             print("축하합니다! 신기록입니다!\n")
 
- 
+    def quiz_delete(self):
+        if not self.data["quiz"]:
+            print("등록된 퀴즈가 없습니다.\n")
+            return
+
+        self.quiz_list()
+
+        num = input_number("삭제할 퀴즈 번호를 입력하세요: ",1,len(self.data["quiz"]))
+        self.data["quiz"].pop(num-1)
+        save(self.data)
