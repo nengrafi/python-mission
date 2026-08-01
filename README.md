@@ -181,12 +181,13 @@ Fast-forward
 [![메뉴 화면](docs/test_7_1.png)](docs/test_7_1.png)
 [![메뉴 화면](docs/test_7_2.png)](docs/test_7_2.png)
 
+[![메뉴 화면](docs/commit log.png)](docs/commit log.png)
 ### 8. 추가과제
-랜덤 출제 : import random을 활용하여 data의 copy본을 만들어서 shuffle
-문제 수 선택 : for에서 주어진 변수보다 많이 반복되면 break 되도록 설계
-힌트 기능 : 0을 누르면 힌트를 안받고 1을 누르면 힌트를 받도록 구현, Quiz Class에 method 제작
-퀴즈 삭제 기능 : 6번을 통해서 list를 확인하고 삭제가능, pop을 이용
-점수 히스토리 : datetime 라이브러리를 통해서 json에 새로운 함수 제작
+- 랜덤 출제 : import random을 활용하여 data의 copy본을 만들어서 shuffle
+- 문제 수 선택 : for에서 주어진 변수보다 많이 반복되면 break 되도록 설계
+- 힌트 기능 : 0을 누르면 힌트를 안받고 1을 누르면 힌트를 받도록 구현, Quiz Class에 method 제작
+- 퀴즈 삭제 기능 : 6번을 통해서 list를 확인하고 삭제가능, pop을 이용
+- 점수 히스토리 : datetime 라이브러리를 통해서 json에 새로운 함수 제작
 ## 트러블 슈팅 
 
 ### 1. Exception 처리시에 프로그램이 종료되지 않음
