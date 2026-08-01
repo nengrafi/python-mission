@@ -11,7 +11,6 @@ class Quiz:
         for i,choice in enumerate(self.choices, start = 1):
             print(f"{i}. {choice}\n")
         
-
     def Correct(self):
         player_answer = input_number("정답을 입력하세요 (1~4): ",1,4)
 

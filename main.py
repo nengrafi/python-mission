@@ -1,5 +1,6 @@
 from services.exception import input_number
 from services.QuizGame import QuizGame
+from services.save import load
 
 menu = """
 ==================================================================
@@ -45,20 +46,18 @@ def quiz_solve():
         max_score = 100*ans/quiz_num
         print("축하드립니다!!! 신기록입니다!!!\n")
 
-def quiz_score():
-    global max_score
-    print(f"최고 점수: {max_score}")
-
 while True:
     print(menu)
+    data = load()
+    quizgame = QuizGame(data)
     player_num = input_number("번호를 입력하세요: ",1,5)
     if player_num == 5:
         break
     elif player_num == 1:
-        quiz_solve()
+        quizgame.quiz_solve()
     elif player_num == 2:
-        quiz_add()
+        quizgame.quiz_add()
     elif player_num == 3:
-        quiz_list()
+        quizgame.quiz_list()
     elif player_num == 4:
-        quiz_score()
+        quizgame.quiz_score()

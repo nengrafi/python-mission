@@ -9,3 +9,4 @@ for item in data["quiz"]:
     quiz = Quiz(item["question"],item["choices"],item["answer"])
     quiz.display()
     quiz.Correct()
+
