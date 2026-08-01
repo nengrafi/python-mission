@@ -1,6 +1,7 @@
 from services.exception import input_str,input_number
 from models.quiz import Quiz
 from services.save import save,load
+import random
 class QuizGame:
     def __init__(self,data:dict):
         self.data = data
@@ -55,7 +56,10 @@ class QuizGame:
     def quiz_solve(self):
         score = 0
 
-        for item in self.data["quiz"]:
+        quiz_list = self.data["quiz"].copy()
+        random.shuffle(quiz_list)
+
+        for item in quiz_list:
             quiz = Quiz(item["question"],item["choices"],item["answer"])
             quiz.display()
             correct = quiz.Correct()
