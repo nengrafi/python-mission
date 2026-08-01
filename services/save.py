@@ -1,11 +1,16 @@
+import json
+
 def load():
     try:
-        continue
+        with open("data/data.json","r",encoding="utf-8") as f:
+            return json.load(f)
 
     except FileNotFoundError:
-        #기본 데이터 사용
+        print("파일이 존재하지 않습니다. 기본 데이터를 사용합니다.\n")
 
-    except FileExistsError:
-        print("파일이 손상되었습니다.\n")
-        #기본 데이터 사용
+    except json.JSONDecodeError:
+        print("파일이 손상되었습니다. 기본 데이터를 사용합니다.\n")
+
+    with open("data/example.json","r",encoding="utf-8") as f:
+        return json.load(f)
 
