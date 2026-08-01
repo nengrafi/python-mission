@@ -49,11 +49,14 @@ To github.com:nengrafi/python-mission.git
 
 ### 2. 메뉴 기능
 
+[![메뉴 화면](docs/test_2.png)](docs/test_2.png)
+
 ### 3. 퀴즈 풀기
-nangrapigood2005@c5r8s3 python-mission % git branch
+```bash
+$ git branch
   main
 * test
-nangrapigood2005@c5r8s3 python-mission % git switch main
+$ git switch main
 'main' 브랜치로 전환합니다
 브랜치가 'origin/main'보다 3개 커밋만큼 앞에 있습니다.
   (로컬에 있는 커밋을 제출하려면 "git push"를 사용하십시오)
@@ -68,9 +71,10 @@ Fast-forward
  5 files changed, 17 insertions(+), 7 deletions(-)
  create mode 100644 docs/test_quiz_6.png
  create mode 100644 test.py
- 
+```
+[![메뉴 화면](docs/test_3.png)](docs/test_3.png)
 ### 4. 퀴즈 추가
-
+```text
 ==================================================================
 퀴즈 게임
 ==================================================================
@@ -116,24 +120,26 @@ Fast-forward
 5. Softmax 함수의 주된 목적은?
 
 6. 안녕테스트 중입니다
-
+```
+[![메뉴 화면](docs/test_4.png)](docs/test_4.png)
 ### 5. 점수 확인
-
+```text
 ==================================================================
 
 번호를 입력하세요: 4
 최고 점수: 20.0
 
 ==================================================================
-
+```
 ### 6. 파일 저장/불러오기
 save,load는 services에서 save.py로 따로 구현
 변수이름 변경, quizzes = quiz , best_score = max_score
 ### 7. Git 저장소 복제 실습
-
+```text
 test code
-
-nangrapigood2005@c5r8s3 mission % rm -r python-mission-clone
+```
+```bash
+$ rm -r python-mission-clone
 override r--r--r-- nangrapigood2005/nangrapigood2005 for python-mission-clone/.git/objects/pack/pack-9f27673ba17676fcdc1763bbe5802702a1eb29fd.idx? 
 override r--r--r-- nangrapigood2005/nangrapigood2005 for python-mission-clone/.git/objects/pack/pack-9f27673ba17676fcdc1763bbe5802702a1eb29fd.pack? 
 override r--r--r-- nangrapigood2005/nangrapigood2005 for python-mission-clone/.git/objects/pack/pack-9f27673ba17676fcdc1763bbe5802702a1eb29fd.rev? 
@@ -151,9 +157,9 @@ remote: Compressing objects: 100% (48/48), done.
 remote: Total 85 (delta 31), reused 82 (delta 28), pack-reused 0 (from 0)
 오브젝트를 받는 중: 100% (85/85), 150.02 KiB | 410.00 KiB/s, 완료.
 델타를 알아내는 중: 100% (31/31), 완료.
-nangrapigood2005@c5r8s3 mission % cd python-mission-copy 
-nangrapigood2005@c5r8s3 python-mission-copy % code .
-nangrapigood2005@c5r8s3 python-mission-copy % git push origin main
+$ cd python-mission-copy 
+$ code .
+$ git push origin main
 오브젝트 나열하는 중: 5, 완료.
 오브젝트 개수 세는 중: 100% (5/5), 완료.
 Delta compression using up to 6 threads
@@ -164,13 +170,23 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To github.com:nengrafi/python-mission.git
    07d3ecb..1819153  main -> main
 
-nangrapigood2005@c5r8s3 python-mission % git pull origin main
+$ git pull origin main
 github.com:nengrafi/python-mission URL에서
  * branch            main       -> FETCH_HEAD
 업데이트 중 07d3ecb..1819153
 Fast-forward
  README.md | 2 ++
  1 file changed, 2 insertions(+)
+```
+[![메뉴 화면](docs/test_7_1.png)](docs/test_7_1.png)
+[![메뉴 화면](docs/test_7_2.png)](docs/test_7_2.png)
+
+### 8. 추가과제
+랜덤 출제 : import random을 활용하여 data의 copy본을 만들어서 shuffle
+문제 수 선택 : for에서 주어진 변수보다 많이 반복되면 break 되도록 설계
+힌트 기능 : 0을 누르면 힌트를 안받고 1을 누르면 힌트를 받도록 구현, Quiz Class에 method 제작
+퀴즈 삭제 기능 : 6번을 통해서 list를 확인하고 삭제가능, pop을 이용
+점수 히스토리 : datetime 라이브러리를 통해서 json에 새로운 함수 제작
 ## 트러블 슈팅 
 
 ### 1. Exception 처리시에 프로그램이 종료되지 않음
