@@ -131,6 +131,8 @@ save,load는 services에서 save.py로 따로 구현
 변수이름 변경, quizzes = quiz , best_score = max_score
 ### 7. Git 저장소 복제 실습
 
+test code
+
 ## 트러블 슈팅 
 
 ### 1. Exception 처리시에 프로그램이 종료되지 않음
