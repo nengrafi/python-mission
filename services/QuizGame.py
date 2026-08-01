@@ -30,11 +30,13 @@ class QuizGame:
             choices.append(choice)
         
         answer = input_number("정답을 입력하세요: ",1,4)
+        hint = input_str("힌트를 입력하세요: ")
         self.data["quiz"].append(
             {
                 "question" : question,
                 "choices" : choices,
-                "answer" : answer
+                "answer" : answer,
+                "hint": hint
             }
         )
         save(self.data)
@@ -66,8 +68,9 @@ class QuizGame:
             if num == quiz_num:
                 break
             num += 1
-            quiz = Quiz(item["question"],item["choices"],item["answer"])
+            quiz = Quiz(item["question"],item["choices"],item["answer"],item["hint"])
             quiz.display()
+            score = quiz.Hint(score)
             correct = quiz.Correct()
             if correct : score += 1
 
