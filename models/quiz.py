@@ -16,9 +16,10 @@ class Quiz:
         player_answer = input_number("정답을 입력하세요 (1~4): ",1,4)
 
         if player_answer == self.answer:
-            print("정답입니다!")
+            print("정답입니다!\n")
             return True
 
-        print("오답입니다!")
+        print("오답입니다!\n")
         return False
+         
         

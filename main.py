@@ -1,3 +1,4 @@
+from services.exception import input_number
 
 menu = """
 ==================================================================
@@ -71,7 +72,7 @@ def quiz_score():
 
 while True:
     print(menu)
-    player_num = int(input("번호를 입력하세요: "))
+    player_num = input_number("번호를 입력하세요: ",1,5)
     if player_num == 5:
         break
     elif player_num == 1:
@@ -82,7 +83,3 @@ while True:
         quiz_list()
     elif player_num == 4:
         quiz_score()
-    elif player_num == "":
-        print("잘못된 입력입니다/\n")
-    else:
-        print("잘못된 입력입니다. 1~5 사이의 숫자를 입력해주세요.\n")
