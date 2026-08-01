@@ -45,28 +45,6 @@ def quiz_solve():
         max_score = 100*ans/quiz_num
         print("축하드립니다!!! 신기록입니다!!!\n")
 
-def quiz_add():
-    global quiz_num
-    print("새로운 퀴즈를 추가합니다! \n")
-    text = ""
-    player_question = input("문제를 입력하세요: ")
-    text += player_question + "\n"
-    for i in range(4):
-        player_question = input(f"선택지 {i+1}: ")
-        text += str(i+1) + ". " +player_question + "\n"
-    player_question = input("정답 번호 (1~4): ")
-    quiz_num += 1
-    quiz[quiz_num] = {
-        "question" : text,
-        "answer" : player_question
-    } 
-
-def quiz_list():
-    global quiz_num,quiz
-    print(f"등록된 퀴즈 목록 (총 {quiz_num}개)\n")
-    for i in range(quiz_num):
-        print(f"{i+1}. {quiz[i+1]['question']}\n")
-
 def quiz_score():
     global max_score
     print(f"최고 점수: {max_score}")

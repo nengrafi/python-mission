@@ -22,4 +22,11 @@ class QuizGame:
         )
         save(self.data)
 
-    
+    def quiz_list(self):
+        quiz_num = len(self.data["quiz"])
+        print(f"등록된 퀴즈 목록 (총 {quiz_num}개)\n")
+        for i,quiz in enumerate(self.data["quiz"],start=1):
+            question = quiz["question"]
+            print(i + ". " + question + "\n")
+        
+            
