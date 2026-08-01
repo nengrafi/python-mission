@@ -133,6 +133,44 @@ save,load는 services에서 save.py로 따로 구현
 
 test code
 
+nangrapigood2005@c5r8s3 mission % rm -r python-mission-clone
+override r--r--r-- nangrapigood2005/nangrapigood2005 for python-mission-clone/.git/objects/pack/pack-9f27673ba17676fcdc1763bbe5802702a1eb29fd.idx? 
+override r--r--r-- nangrapigood2005/nangrapigood2005 for python-mission-clone/.git/objects/pack/pack-9f27673ba17676fcdc1763bbe5802702a1eb29fd.pack? 
+override r--r--r-- nangrapigood2005/nangrapigood2005 for python-mission-clone/.git/objects/pack/pack-9f27673ba17676fcdc1763bbe5802702a1eb29fd.rev? 
+rm: python-mission-clone/.git/objects/pack: Directory not empty
+rm: python-mission-clone/.git/objects: Directory not empty
+rm: python-mission-clone/.git: Directory not empty
+rm: python-mission-clone: Directory not empty
+nangrapigood2005@c5r8s3 mission % git clone git@github.com:nengrafi/python-mission.git python-mission-clone
+fatal: 대상 경로가('python-mission-clone') 이미 있고 빈 디렉터리가 아닙니다.
+nangrapigood2005@c5r8s3 mission % git clone git@github.com:nengrafi/python-mission.git python-mission-copy
+'python-mission-copy'에 복제합니다...
+remote: Enumerating objects: 85, done.
+remote: Counting objects: 100% (85/85), done.
+remote: Compressing objects: 100% (48/48), done.
+remote: Total 85 (delta 31), reused 82 (delta 28), pack-reused 0 (from 0)
+오브젝트를 받는 중: 100% (85/85), 150.02 KiB | 410.00 KiB/s, 완료.
+델타를 알아내는 중: 100% (31/31), 완료.
+nangrapigood2005@c5r8s3 mission % cd python-mission-copy 
+nangrapigood2005@c5r8s3 python-mission-copy % code .
+nangrapigood2005@c5r8s3 python-mission-copy % git push origin main
+오브젝트 나열하는 중: 5, 완료.
+오브젝트 개수 세는 중: 100% (5/5), 완료.
+Delta compression using up to 6 threads
+오브젝트 압축하는 중: 100% (3/3), 완료.
+오브젝트 쓰는 중: 100% (3/3), 297 bytes | 297.00 KiB/s, 완료.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:nengrafi/python-mission.git
+   07d3ecb..1819153  main -> main
+
+nangrapigood2005@c5r8s3 python-mission % git pull origin main
+github.com:nengrafi/python-mission URL에서
+ * branch            main       -> FETCH_HEAD
+업데이트 중 07d3ecb..1819153
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
 ## 트러블 슈팅 
 
 ### 1. Exception 처리시에 프로그램이 종료되지 않음
