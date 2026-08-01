@@ -1,24 +1,40 @@
+## 프로젝트 개요
+OOP를 이용한 퀴즈 시스템 제작하기
+
+## 퀴즈 주제 선정 이유
+인공지능 분야에 흥미가 있어서 이걸 퀴즈로 만들고 싶었다.
+
+## 실행방법
+main.py에서 시작하여 진행하면 된다.
+
 ## OOP 설계 원칙
 - main.py를 통해서 퀴즈를 작동
 - models에 data를 가지고 있는 class quiz를 저장하여 데이터를 표현하는 객체 관리
-- services에 QuizGame 정의, 예외 처리, 저장과 로그 등의 기능 구현
+- services에 QuizGame 정의, input 예외 처리, 저장과 로그 등의 기능 구현
 - data에 사전에 준비한 데이터를 저장
 - state.json을 저장소로 사용
 - docs에 log및 image를 저장하여 README.md의 가독성 증가
 
+## 데이터 설계 원칙
+- quiz 질문과 max_score을 1차적으로 dict로 저장
+- quiz의 key는 list로 넣어서 그 안에 여러 문제들이 들어갈 수 있도록 함
+- list 내의 한문제는 dict를 이용해서 question,choices,answer 저장
+- choices의 key도 list로 저장하여 4가지 선택지가 저장될 수 있도록 반영
+
 ## 진행과정
 ### 1. github 설정
 
-git remote add origin git@github.com:nengrafi/python-mission.git
-git remote -v
+```bash
+$ git remote add origin git@github.com:nengrafi/python-mission.git
+$ git remote -v
 
 origin  git@github.com:nengrafi/python-mission.git (fetch)
 origin  git@github.com:nengrafi/python-mission.git (push)
 
-git init
-git add .
-git commit -m "first"
-git push origin main
+$ git init
+$ git add .
+$ git commit -m "first"
+$ git push origin main
 
 오브젝트 나열하는 중: 3, 완료.
 오브젝트 개수 세는 중: 100% (3/3), 완료.
@@ -28,16 +44,12 @@ Delta compression using up to 6 threads
 Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To github.com:nengrafi/python-mission.git
  * [new branch]      main -> main
+```
+.gitignore의 경우 __pycache__를 설정해서 python 실행시에 나오는 파일들을 무시
 
 ### 2. 메뉴 기능
 
-### 3. 공통 입력/ 예외 처리 기준
-
-### 4. Quiz 클래스
-
-### 5. 기본 퀴즈 데이터
-
-### 6. 퀴즈 풀기
+### 3. 퀴즈 풀기
 nangrapigood2005@c5r8s3 python-mission % git branch
   main
 * test
@@ -57,28 +69,83 @@ Fast-forward
  create mode 100644 docs/test_quiz_6.png
  create mode 100644 test.py
  
-### 7. 퀴즈 추가
+### 4. 퀴즈 추가
 
-### 8. 퀴즈 목록
+==================================================================
+퀴즈 게임
+==================================================================
+1. 퀴즈 풀기
+2. 퀴즈 추가
+3. 퀴즈 목록
+4. 점수 확인
+5. 종료
+==================================================================
 
-### 9. 점수 확인
+번호를 입력하세요: 2
 
-### 10. QuizGame class
+새로운 퀴즈를 추가합니다! 
 
-### 11. 파일 저장/불러오기
+문제를 입력하세요: 안녕 테스트 중입니다
+1. 정답이에요
+2. 아니에요
+3. 아님
+4. 아님
+정답을 입력하세요: 1
 
-### 12. Git 저장소 복제 실습
+==================================================================
+퀴즈 게임
+==================================================================
+1. 퀴즈 풀기
+2. 퀴즈 추가
+3. 퀴즈 목록
+4. 점수 확인
+5. 종료
+==================================================================
 
-## 오류
+번호를 입력하세요: 3
+등록된 퀴즈 목록 (총 6개)
 
-### 1. 지역변수와 전역번수
+1. 다음중 기계학습의 한 종류가 아닌것은?
 
-raceback (most recent call last):
-  File "/Users/nangrapigood2005/python-mission/game.py", line 77, in <module>
-    quiz_add()
-  File "/Users/nangrapigood2005/python-mission/game.py", line 55, in quiz_add
-    quiz_num += 1
-UnboundLocalError: local variable 'quiz_num' referenced before assignment
+2. 활성화 함수를 사용하는 가장 큰 이유는?
 
--> 함수안에서 += 또는 =을 사용하면 Python은 그 변수를 지역 변수로 판단하기 때문에 값이 없다고 인식하고 오류가 남
--> global <변수이름>을 추가함으로서 그 변수가 전역 변수임을 명시
+3. 과적합(Overfitting)을 완화시키기에 가장 적절한 방법은?
+
+4. BERT와 GPT 모델의 가장 큰 차이점으로 적절한 것은?
+
+5. Softmax 함수의 주된 목적은?
+
+6. 안녕테스트 중입니다
+
+### 5. 점수 확인
+
+==================================================================
+
+번호를 입력하세요: 4
+최고 점수: 20.0
+
+==================================================================
+
+### 6. 파일 저장/불러오기
+save,load는 services에서 save.py로 따로 구현
+변수이름 변경, quizzes = quiz , best_score = max_score
+### 7. Git 저장소 복제 실습
+
+## 트러블 슈팅 
+
+### 1. Exception 처리시에 프로그램이 종료되지 않음
+기존에는 exception.py에서 예외처리시에 return None을 사용하여서 처리했음
+
+이렇게 되니 프로그램이 종료되지 않고 종료시키려면 모든 input에 대해서 예외 처리를 해야하는 상황 발생
+
+따라서 raise를 이용해서 error을 다시 던지고 main.py에서 while 구문을 try-except로 감싸서 예외 처리
+
+### 2. 함수 순서 문제
+
+print(f"최고 점수: {self.data["max_score"]}") 
+
+여기에서 ""내에 ''를 사용했더니 문자열이 일찍 끝난걸로 착각을 해서 오류가 일어남
+
+print(f"최고 점수: {self.data['max_score']}") 
+
+로 수정

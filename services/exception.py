@@ -4,17 +4,17 @@ def input_number(message:str,min_num:int,max_num:int):
             text = input(message).strip()
 
             if text == "":
-                print("값을 입력해주세요")
+                print("값을 입력해주세요.")
                 continue
 
             text_int = int(text)
 
             if text_int < min_num or text_int > max_num:
-                print(f"범위 밖의 입력입니다 ({min_num} ~ {max_num}.)")
+                print(f"범위 밖의 입력입니다 ({min_num} ~ {max_num}).")
                 continue
 
             if text == "":
-                print("값을 입력해주세요")
+                print("값을 입력해주세요.")
                 continue
 
             return text_int
@@ -24,22 +24,24 @@ def input_number(message:str,min_num:int,max_num:int):
             continue
 
         except KeyboardInterrupt:
-            print("KeyboardInterrupt가 발생했습니다. 프로그램을 안전하게 종료합니다.")
-            return None
+            print("\nKeyboardInterrupt가 발생했습니다.\n")
+            raise
         
         except EOFError:
-            print("EOFError가 발생했습니다. 프로그램을 안전하게 종료합니다.") 
-            return None
+            print("\nEOFError가 발생했습니다.\n") 
+            raise
 
 def input_str(message:str):
     while True:
         try:
             text = input(message)
 
+            return text
+
         except KeyboardInterrupt:
-            print("KeyboardInterrupt가 발생했습니다. 프로그램을 안전하게 종료합니다.")
-            return None
+            print("\nKeyboardInterrupt가 발생했습니다. 프로그램을 안전하게 종료합니다.")
+            raise
         
         except EOFError:
-            print("EOFError가 발생했습니다. 프로그램을 안전하게 종료합니다.") 
-            return None
+            print("\nEOFError가 발생했습니다. 프로그램을 안전하게 종료합니다.") 
+            raise
