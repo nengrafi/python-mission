@@ -14,3 +14,9 @@ def load():
     with open("data/example.json","r",encoding="utf-8") as f:
         return json.load(f)
 
+def save(data):
+    #ensure_ascii는 사람이 읽기 불가능 하게 하는것, indent로 4칸 들여쓰기 
+    with open("data/data.json","w",encoding="utf-8") as f:
+        json.dump(data,f,ensure_ascii=False,indent=4)
+
+

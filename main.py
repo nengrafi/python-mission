@@ -1,4 +1,5 @@
 from services.exception import input_number
+from services.QuizGame import QuizGame
 
 menu = """
 ==================================================================

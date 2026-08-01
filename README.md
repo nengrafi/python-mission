@@ -38,7 +38,25 @@ To github.com:nengrafi/python-mission.git
 ### 5. 기본 퀴즈 데이터
 
 ### 6. 퀴즈 풀기
-
+nangrapigood2005@c5r8s3 python-mission % git branch
+  main
+* test
+nangrapigood2005@c5r8s3 python-mission % git switch main
+'main' 브랜치로 전환합니다
+브랜치가 'origin/main'보다 3개 커밋만큼 앞에 있습니다.
+  (로컬에 있는 커밋을 제출하려면 "git push"를 사용하십시오)
+nangrapigood2005@c5r8s3 python-mission % git merge test
+업데이트 중 d354bea..c729934
+Fast-forward
+ .gitignore           |   1 +
+ docs/test_quiz_6.png | Bin 0 -> 101253 bytes
+ main.py              |   7 ++-----
+ models/quiz.py       |   5 +++--
+ test.py              |  11 +++++++++++
+ 5 files changed, 17 insertions(+), 7 deletions(-)
+ create mode 100644 docs/test_quiz_6.png
+ create mode 100644 test.py
+ 
 ### 7. 퀴즈 추가
 
 ### 8. 퀴즈 목록
