@@ -1,3 +1,11 @@
+## OOP 설계 원칙
+- main.py를 통해서 퀴즈를 작동
+- models에 data를 가지고 있는 class quiz를 저장하여 데이터를 표현하는 객체 관리
+- services에 QuizGame 정의, 예외 처리, 저장과 로그 등의 기능 구현
+- data에 사전에 준비한 데이터를 저장
+- state.json을 저장소로 사용
+- docs에 log및 image를 저장하여 README.md의 가독성 증가
+
 ## 진행과정
 ### 1. github 설정
 

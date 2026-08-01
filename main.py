@@ -30,7 +30,7 @@ def quiz_solve():
         num += 1
         print(f"[문제 {num}]\n")
         print(f"{quiz[num]['question']}\n")
-        player_input = input("정답 입력: ")
+        player_input = input("정답 입력: ").strip()
         if quiz[num]['answer'] == player_input:
             print("정답입니다!!!!\n")
             ans += 1
@@ -82,5 +82,7 @@ while True:
         quiz_list()
     elif player_num == 4:
         quiz_score()
+    elif player_num == "":
+        print("잘못된 입력입니다/\n")
     else:
         print("잘못된 입력입니다. 1~5 사이의 숫자를 입력해주세요.\n")
