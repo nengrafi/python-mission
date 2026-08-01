@@ -59,19 +59,28 @@ class QuizGame:
         quiz_list = self.data["quiz"].copy()
         random.shuffle(quiz_list)
 
+        quiz_num = input_number("해결할 퀴즈 수를 입력하세요: ",1,len(quiz_list))
+        num = 0
+
         for item in quiz_list:
+            if num == quiz_num:
+                break
+            num += 1
             quiz = Quiz(item["question"],item["choices"],item["answer"])
             quiz.display()
             correct = quiz.Correct()
             if correct : score += 1
 
-        print(f"{len(self.data['quiz'])}개중에서 {score}개 정답으로 현재 점수는 {score * 100 / len(self.data['quiz'])}입니다.\n")
+        total_score = int(score * 100 / quiz_num)
+
+        print(f"{quiz_num}개중에서 {score}개 정답으로 현재 점수는 {total_score}입니다.\n")
+
 
         if self.data["max_score"] == None:
-            self.data["max_score"] = score * 100 / len(self.data["quiz"])
+            self.data["max_score"] = total_score
 
-        elif self.data["max_score"] < score * 100 / len(self.data["quiz"]):
-            self.data["max_score"] = score * 100 / len(self.data["quiz"])
+        elif self.data["max_score"] < total_score:
+            self.data["max_score"] = total_score
             print("축하합니다! 신기록입니다!\n")
 
  
