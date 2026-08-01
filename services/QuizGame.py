@@ -2,6 +2,7 @@ from services.exception import input_str,input_number
 from models.quiz import Quiz
 from services.save import save,load
 import random
+from datetime import datetime
 class QuizGame:
     def __init__(self,data:dict):
         self.data = data
@@ -86,6 +87,14 @@ class QuizGame:
         elif self.data["max_score"] < total_score:
             self.data["max_score"] = total_score
             print("축하합니다! 신기록입니다!\n")
+
+        self.data["history"].append({
+            "datetime" : datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "quiz_count" : quiz_num,
+            "score": total_score
+        })
+
+        save(self.data)
 
     def quiz_delete(self):
         if not self.data["quiz"]:

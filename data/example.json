@@ -56,5 +56,12 @@
             "hint" : "함수를 사용하면 모든 값의 합이 1이 된다."
         }
     ],
-    "max_score": null
+    "max_score": null,
+    "history" : [
+        {
+            "datetime" : "2026-08-02 00:51:23",
+            "quiz_count" : 5,
+            "score" : 0
+        }
+    ]
 }
