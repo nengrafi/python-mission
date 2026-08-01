@@ -1,4 +1,5 @@
 from services.save import save,load
+from services.exception import input_str,input_number
 class QuizGame:
     def __init__(self,data:dict):
         self.data = data
@@ -6,13 +7,13 @@ class QuizGame:
     def quiz_add(self):
         print("새로운 퀴즈를 추가합니다! \n")
         text = ""
-        player_question = input("문제를 입력하세요: ")
+        player_question = input_str("문제를 입력하세요: ")
         text += player_question + "\n"
         choice_list = []
         for i in range(4):
-            player_question = input(f"선택지 {i+1}: ")
+            player_question = input_str(f"선택지 {i+1}: ")
             choice_list.append(player_question)
-        player_question = input("정답 번호 (1~4): ")
+        player_question = input_number("정답 번호 (1~4): ",1,4)
         self.data["quiz"].append(
             {
                 "question" : text,
@@ -28,5 +29,5 @@ class QuizGame:
         for i,quiz in enumerate(self.data["quiz"],start=1):
             question = quiz["question"]
             print(i + ". " + question + "\n")
-        
+
             

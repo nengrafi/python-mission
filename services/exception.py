@@ -30,3 +30,16 @@ def input_number(message:str,min_num:int,max_num:int):
         except EOFError:
             print("EOFError가 발생했습니다. 프로그램을 안전하게 종료합니다.") 
             return None
+
+def input_str(message:str):
+    while True:
+        try:
+            text = input(message)
+
+        except KeyboardInterrupt:
+            print("KeyboardInterrupt가 발생했습니다. 프로그램을 안전하게 종료합니다.")
+            return None
+        
+        except EOFError:
+            print("EOFError가 발생했습니다. 프로그램을 안전하게 종료합니다.") 
+            return None
